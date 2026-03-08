@@ -32,10 +32,12 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
           <div onClick={() => navigate('/')} className="flex items-center space-x-3 cursor-pointer group">
-            <div className="w-12 h-12 bg-gradient-to-br from-emerald-500 to-teal-600 rounded-2xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-all">
-              <span className="text-white font-bold text-2xl">E</span>
+            <div className="flex flex-col gap-1">
+              <div className="w-8 h-2 rounded-full bg-red-500"></div>
+              <div className="w-8 h-2 rounded-full bg-cyan-500"></div>
+              <div className="w-8 h-2 rounded-full bg-green-500"></div>
             </div>
-            <span className="text-2xl font-bold bg-gradient-to-r from-emerald-600 to-teal-600 bg-clip-text text-transparent">
+            <span className="text-2xl font-bold text-gray-900 dark:text-white">
               EduConnect
             </span>
           </div>

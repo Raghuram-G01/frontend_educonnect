@@ -1,102 +1,128 @@
-import { useNavigate } from 'react-router-dom';
-import { FiBook, FiUsers, FiAward, FiTrendingUp } from 'react-icons/fi';
-import Button from '../components/Button';
+import { Link } from 'react-router-dom';
+import { FiBook, FiCode, FiZap, FiKey, FiUser, FiFileText, FiInstagram, FiYoutube } from 'react-icons/fi';
 
 const Home = () => {
-  const navigate = useNavigate();
-  
-  const features = [
-    {
-      icon: FiBook,
-      title: 'Quality Courses',
-      description: 'Access hundreds of courses from expert instructors'
-    },
-    {
-      icon: FiUsers,
-      title: 'Learn Together',
-      description: 'Join a community of passionate learners'
-    },
-    {
-      icon: FiAward,
-      title: 'Get Certified',
-      description: 'Earn certificates upon course completion'
-    },
-    {
-      icon: FiTrendingUp,
-      title: 'Track Progress',
-      description: 'Monitor your learning journey with analytics'
-    }
-  ];
-
   return (
-    <div className="animate-fadeIn">
-      <section className="relative bg-gradient-to-r from-emerald-500 via-teal-500 to-cyan-500 text-white py-24 px-4 overflow-hidden">
-        <div className="absolute inset-0 bg-black/10"></div>
-        <div className="max-w-7xl mx-auto text-center relative z-10">
-          <h1 className="text-5xl md:text-7xl font-bold mb-6 drop-shadow-lg">
-            Welcome to EduConnect
-          </h1>
-          <p className="text-xl md:text-2xl mb-10 text-emerald-50">
-            Your gateway to unlimited learning opportunities
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="bg-white text-emerald-600 hover:bg-emerald-50" onClick={() => navigate('/register')}>
-              Get Started
-            </Button>
-            <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-emerald-600" onClick={() => navigate('/login')}>
-              Sign In
-            </Button>
+    <div className="min-h-screen bg-black text-white">
+      {/* Hero Section */}
+      <div className="container mx-auto px-6 py-20">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+          {/* Left Content */}
+          <div>
+            <h1 className="text-6xl font-bold mb-6 leading-tight">
+              Accelerate Your<br />
+              <span className="text-cyan-400">Tech Journey</span><br />
+              to <span className="text-lime-400">Success</span>
+            </h1>
+            <p className="text-gray-300 text-lg mb-8 leading-relaxed">
+              Welcome to EduConnect — where your coding journey takes off! Practice DSA problems, build System Designs expertise, and level up for your dream tech role.
+            </p>
+            <Link
+              to="/login"
+              className="inline-flex items-center gap-3 bg-green-700 hover:bg-green-800 text-white px-8 py-4 rounded-lg text-lg font-semibold transition"
+            >
+              <FiBook className="text-xl" /> Start Learning
+            </Link>
+          </div>
+
+          {/* Right - Code Editor Simulation */}
+          <div className="bg-gray-900 rounded-xl shadow-2xl overflow-hidden relative">
+            {/* macOS dots */}
+            <div className="bg-gray-800 px-4 py-3 flex items-center gap-2">
+              <div className="flex gap-2">
+                <div className="w-3 h-3 rounded-full bg-red-500"></div>
+                <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
+                <div className="w-3 h-3 rounded-full bg-green-500"></div>
+              </div>
+              <span className="flex-1 text-center text-gray-400 text-sm font-mono">success.js</span>
+            </div>
+            
+            <div className="p-6 relative">
+              <pre className="text-sm font-mono leading-relaxed">
+                <code>
+                  <span className="text-blue-400">class</span> <span className="text-yellow-300">TechJourney</span> {'{'}
+                  {`\n  `}<span className="text-cyan-400">constructor</span>() {'{'}
+                  {`\n    `}<span className="text-gray-500">this</span>.skills = [];
+                  {`\n  `}{'}'}
+                  {`\n\n  `}<span className="text-cyan-400">masterDSA</span>() {'{'}
+                  {`\n    `}<span className="text-purple-400">return</span> <span className="text-orange-300">'Problem Solving Skills'</span>;
+                  {`\n  `}{'}'}
+                  {`\n\n  `}<span className="text-cyan-400">designSystems</span>() {'{'}
+                  {`\n    `}<span className="text-purple-400">return</span> <span className="text-orange-300">'Architecture Excellence'</span>;
+                  {`\n  `}{'}'}
+                  {`\n\n  `}<span className="text-cyan-400">achieveSuccess</span>() {'{'}
+                  {`\n    `}<span className="text-purple-400">return</span> <span className="text-orange-300">'Dream Job Unlocked!'</span>;
+                  {`\n  `}{'}'}
+                  {`\n`}{'}'}
+                </code>
+              </pre>
+              <FiZap className="absolute top-4 right-4 text-purple-500 text-3xl opacity-30" />
+            </div>
           </div>
         </div>
-        <div className="absolute bottom-0 left-0 right-0">
-          <svg viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M0 120L60 105C120 90 240 60 360 45C480 30 600 30 720 37.5C840 45 960 60 1080 67.5C1200 75 1320 75 1380 75L1440 75V120H1380C1320 120 1200 120 1080 120C960 120 840 120 720 120C600 120 480 120 360 120C240 120 120 120 60 120H0Z" fill="currentColor" className="text-emerald-50 dark:text-gray-900"/>
-          </svg>
-        </div>
-      </section>
+      </div>
 
-      <section className="py-20 px-4">
-        <div className="max-w-7xl mx-auto">
-          <h2 className="text-4xl font-bold text-center mb-12 bg-gradient-to-r from-emerald-600 to-teal-600 bg-clip-text text-transparent">
-            Why Choose EduConnect?
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {features.map((feature, index) => {
-              const Icon = feature.icon;
-              return (
-                <div
-                  key={index}
-                  className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-lg p-6 rounded-2xl shadow-xl hover:shadow-2xl hover:scale-105 transition-all text-center border border-emerald-100 dark:border-gray-700"
-                >
-                  <div className="w-16 h-16 bg-gradient-to-br from-emerald-500 to-teal-600 rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg">
-                    <Icon className="text-3xl text-white" />
-                  </div>
-                  <h3 className="text-xl font-bold mb-2 text-gray-900 dark:text-white">
-                    {feature.title}
-                  </h3>
-                  <p className="text-gray-600 dark:text-gray-400">
-                    {feature.description}
-                  </p>
+      {/* Footer Section */}
+      <footer className="bg-black border-t border-gray-800 mt-20">
+        <div className="container mx-auto px-6 py-12">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+            {/* Logo */}
+            <div>
+              <div className="flex items-center gap-2 mb-4">
+                <div className="flex flex-col gap-1">
+                  <div className="w-8 h-2 rounded-full bg-red-500"></div>
+                  <div className="w-8 h-2 rounded-full bg-cyan-500"></div>
+                  <div className="w-8 h-2 rounded-full bg-green-500"></div>
                 </div>
-              );
-            })}
+                <span className="text-white font-bold text-xl">EduConnect</span>
+              </div>
+            </div>
+
+            {/* Quick Links */}
+            <div>
+              <h4 className="text-white font-semibold mb-4">Quick Links</h4>
+              <ul className="space-y-2 text-gray-400">
+                <li><Link to="/" className="hover:text-white">Home</Link></li>
+                <li><Link to="/login" className="hover:text-white">Dashboard</Link></li>
+              </ul>
+            </div>
+
+            {/* Platform */}
+            <div>
+              <h4 className="text-white font-semibold mb-4">Platform</h4>
+              <ul className="space-y-2 text-gray-400">
+                <li><a href="#" className="hover:text-white">Documentation</a></li>
+                <li><a href="#" className="hover:text-white">Support</a></li>
+                <li><a href="#" className="hover:text-white">Careers</a></li>
+              </ul>
+            </div>
+
+            {/* Follow Us */}
+            <div>
+              <h4 className="text-white font-semibold mb-4">Follow Us</h4>
+              <div className="flex gap-3 mb-4">
+                <a href="#" className="w-10 h-10 rounded-full border-2 border-gray-600 flex items-center justify-center hover:border-white transition">
+                  <FiInstagram className="text-gray-400 hover:text-white" />
+                </a>
+                <a href="#" className="w-10 h-10 rounded-full border-2 border-gray-600 flex items-center justify-center hover:border-white transition">
+                  <FiYoutube className="text-gray-400 hover:text-white" />
+                </a>
+              </div>
+              <p className="text-gray-400 text-sm">Join our community for coding tips, tutorials, and updates!</p>
+            </div>
+          </div>
+
+          {/* Bottom Bar */}
+          <div className="border-t border-gray-800 pt-6 flex flex-col md:flex-row justify-between items-center text-gray-400 text-sm">
+            <p>© 2025 EduConnect. All rights reserved.</p>
+            <div className="flex gap-6 mt-4 md:mt-0">
+              <a href="#" className="hover:text-white">Privacy Policy</a>
+              <a href="#" className="hover:text-white">Terms of Service</a>
+              <a href="#" className="hover:text-white">Contact</a>
+            </div>
           </div>
         </div>
-      </section>
-
-      <section className="bg-gradient-to-r from-emerald-500 via-teal-500 to-cyan-500 text-white py-20 px-4">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            Ready to Start Learning?
-          </h2>
-          <p className="text-xl mb-8 text-emerald-50">
-            Join thousands of students already learning on EduConnect
-          </p>
-          <Button size="lg" className="bg-white text-emerald-600 hover:bg-emerald-50" onClick={() => navigate('/register')}>
-            Create Free Account
-          </Button>
-        </div>
-      </section>
+      </footer>
     </div>
   );
 };
