@@ -55,7 +55,6 @@ const CreateAssessment = () => {
 
       const prompt = `Generate exactly ${numQuestions} multiple choice questions about ${aiTopic}. Return ONLY a JSON array with no extra text or markdown. Each question must have this exact format:
 [{"question":"text","options":["a","b","c","d"],"correctAnswer":0}]`;
-
       const result = await model.generateContent(prompt);
       const response = await result.response;
       let text = response.text().trim();
@@ -88,12 +87,12 @@ const CreateAssessment = () => {
       id: Date.now(),
       type,
       ...(type === 'quiz' ? assessment : codingProblem),
-      createdAt: new Date().toISOString()
+      createdAt: new Date().toISOString() 
     };
     localStorage.setItem('assessments', JSON.stringify([...assessments, newAssessment]));
     navigate('/faculty/dashboard');
   };
-
+//abc
   return (
     <div className="max-w-4xl mx-auto p-6">
       <h1 className="text-3xl font-bold mb-6">Create Assessment</h1>

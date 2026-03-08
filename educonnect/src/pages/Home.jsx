@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import { FiBook, FiCode, FiZap, FiKey, FiUser, FiFileText, FiInstagram, FiYoutube } from 'react-icons/fi';
-
+ // changed the ui
 const Home = () => {
   return (
     <div className="min-h-screen bg-black text-white">
